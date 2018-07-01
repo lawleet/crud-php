@@ -63,10 +63,13 @@ $id = $_GET['id'];
 $sql = "SELECT * FROM users WHERE id=" . $id;
 $result = mysqli_query($conn, $sql);
 
-while ($res = mysqli_fetch_array($result)) {
-	$name = $res['name'];
-	$age = $res['age'];
-	$email = $res['email'];
+foreach ($result as $key => $value) {
+	$name=$value['name'];
+	$age=$value['age'];
+	$email=$value['email'];
+	$password=$value['password'];
+	$description=$value['description'];
+	
 }
 ?>
 
